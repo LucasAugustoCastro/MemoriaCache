@@ -9,7 +9,7 @@ public class IO {
         this.sout = sout;
     }
 
-    public void write(Integer palavra){
+    public void write(String palavra){
         this.sout.println(palavra);
     }
 }

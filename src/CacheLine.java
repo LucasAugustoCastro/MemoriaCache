@@ -1,42 +1,44 @@
 public class CacheLine {
-    private Integer tag;
-    private Integer modif;
-    private String[] palavras;
+    private int tag;
+    private boolean modif;
+    private short[] palavras;
 
     public CacheLine(int k) {
-        this.tag = null;
-        this.modif = null;
-        this.palavras = new String[k];
+        this.tag = -1;
+        this.modif = false;
+        this.palavras = new short[k];
     }
 
     public void setTag(int tag) {
         this.tag = tag;
     }
 
-    public void setModif(int modif) {
+    public void setModif(boolean modif) {
         this.modif = modif;
     }
 
-    public void setPalavras(String[] palavras) {
+    public void setPalavras(short[] palavras) {
         this.palavras = palavras;
     }
+
+    public void setPalavra(int w, short palavra) { this.palavras[w] = palavra; }
 
     public int getTag() {
         return tag;
     }
 
-    public int getModif() {
+    public boolean getModif() {
         return modif;
     }
 
-    public String[] getPalavras() {
+    public short[] getPalavras() {
         return palavras;
     }
     public int getPalavrasSize() {
         return palavras.length;
     }
 
-    public String getPalavra(int w) {
+    public short getPalavra(int w) {
         return palavras[w];
     }
 }
