@@ -35,12 +35,9 @@ public class RAM {
         return block;
     }
 
-    public short[] setBlock(int blockStart, short[] palavras) {
-        short[] block = new short[blocksize];
+    public void setBlock(int blockStart, short[] palavras) {
         for(int i = blockStart; i < blockStart + blocksize; i++){
             set(i, palavras[i - blockStart]);
-            block[i] = get(i);
         }
-        return block;
     }
 }
