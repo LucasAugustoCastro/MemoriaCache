@@ -1,4 +1,14 @@
 public class Main {
+    /**
+     * Integrantes:
+     *  Lucas Augusto Castro
+     *  Bryan Verneck
+     *  Victor Marcel Vieira
+     *  Pedro Silva de Vargas
+     */
+
+
+
     public static void main(String[] args) {
         int k = 64;
         int tCACHE = 8 * 1024;
