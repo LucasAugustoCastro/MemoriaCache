@@ -46,7 +46,7 @@ public class Cache {
 
         // Verifica se a tag é diferente, caso seja ira dar cache miss e chamar a função getRamBlockTo, para buscar o bloco e salvar na ram
         if(cacheLines[strw[2]].getTag() != strw[1]){
-            System.out.println("Cache miss: " + this.cacheMiss++ );
+            System.out.println("Cache miss get: " + (this.cacheMiss++) + " value: " + x );
             getRamBlockTo(strw, x);
         }
 
@@ -64,7 +64,7 @@ public class Cache {
 
         // Verifica se a tag é diferente, caso seja ira dar cache miss e chamar a função getRamBlockTo, para buscar o bloco e salvar na ram
         if(cacheLines[strw[2]].getTag() != strw[1]){
-            System.out.println("Cache miss: "+ this.cacheMiss++);
+            System.out.println("Cache miss set: "+ (this.cacheMiss++)  + " value: " + x);
             getRamBlockTo(strw, x);
         }
 
@@ -100,6 +100,7 @@ public class Cache {
         if(cacheLines[strw[2]].getModif()){
             // caso seja seta na ram o valor modificado
             this.ram.setBlock(s << nbits_w, cacheLines[strw[2]].getPalavras());
+            cacheLines[strw[2]].setModif(false);
         }
 
         // seta na cache o bloco da ram e a tag referente
